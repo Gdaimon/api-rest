@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <title>Lista de Tareas</title>
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="offset-3">
+          <h1>Lista de Tareas</h1>
+
+          <form action="adicionar/" method="POST">
+
+            <div class="form-group">
+
+              <input type="text" class="form-control" placeholder="Ingrese una tarea" autofocus name="nuevaTarea">
+
+              <button type="submit" class="btn btn-primary">
+                Enviar
+              </button>
+
+              <ul class="list-group list-group-flush mt-3">
+                <% tareas.forEach(function(tarea, id){ %>
+                  <li class="list-group-item d-flex justify-content-between">
+                    <%= tarea %>
+
+                      <a href="eliminar/<%= id %>">
+                        <span class="badge badge-danger">X</span>
+                      </a>
+                  </li>
+                  <% }) %>
+                    <li></li>
+              </ul>
+
+            </div>
+
+
+          </form>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
